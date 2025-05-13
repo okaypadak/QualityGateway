@@ -4,14 +4,13 @@ server:
 spring:
   main:
     web-application-type: reactive
+
   cloud:
     gateway:
       default-filters:
-        - JwtAuthFilter
+        - name: JwtAuthFilter  # sadece header kontrol eden filter
       routes:
         - id: urun-servisi
-          uri: qualitytest:8082
+          uri: http://qualitytest:8082
           predicates:
             - Path=/urun/**
-          filters:
-            - name: JwtAuthFilter
