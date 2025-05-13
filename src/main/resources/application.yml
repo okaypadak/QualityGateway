@@ -10,8 +10,8 @@ spring:
         - JwtAuthFilter
       routes:
         - id: urun-servisi
-          uri: http://localhost:8081  # ürün servisi adresi
+          uri: http://localhost:8082
           predicates:
-            - Path=/urun/**           # sadece bu path'e yönlendir
+            - Path=/urun/**
           filters:
-            - name: JwtAuthFilter     # özel filter (aşağıda tanımlanacak)
+            - name: JwtAuthFilter
