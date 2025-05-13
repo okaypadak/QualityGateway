@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - JwtAuthFilter
+      routes:
+        - id: urun-servisi
+          uri: http://localhost:8081  # ürün servisi adresi
+          predicates:
+            - Path=/urun/**           # sadece bu path'e yönlendir
+          filters:
+            - name: JwtAuthFilter     # özel filter (a?a??da tan?mlanacak)
