@@ -10,7 +10,7 @@ spring:
         - JwtAuthFilter
       routes:
         - id: urun-servisi
-          uri: http://qualitytest:8082
+          uri: qualitytest
           predicates:
             - Path=/urun/**
           filters:
