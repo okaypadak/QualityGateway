@@ -1,15 +1,17 @@
 server:
-  port: 8080
+  port: 9090
 
 spring:
+  main:
+    web-application-type: reactive
   cloud:
     gateway:
       default-filters:
         - JwtAuthFilter
       routes:
         - id: urun-servisi
-          uri: http://localhost:8081  # �r�n servisi adresi
+          uri: http://localhost:8081  # ürün servisi adresi
           predicates:
-            - Path=/urun/**           # sadece bu path'e y�nlendir
+            - Path=/urun/**           # sadece bu path'e yönlendir
           filters:
-            - name: JwtAuthFilter     # �zel filter (a?a??da tan?mlanacak)
+            - name: JwtAuthFilter     # özel filter (aşağıda tanımlanacak)
