@@ -1,14 +1,6 @@
-server:
-  port: ${PORT:8080}
-
 spring:
-  main:
-    web-application-type: reactive
-
   cloud:
     gateway:
-      default-filters:
-        - name: JwtAuthFilter  # sadece header kontrol eden filter
       routes:
         - id: urun-servisi
           uri: http://qualitytest:8082
