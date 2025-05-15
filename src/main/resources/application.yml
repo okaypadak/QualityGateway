@@ -3,6 +3,6 @@ spring:
     gateway:
       routes:
         - id: urun-servisi
-          uri: http://qualityauthclient:8082
+          uri: http://qualitytest:8082
           predicates:
             - Path=/urun/**
